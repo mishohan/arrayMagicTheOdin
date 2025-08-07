@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map reduce and filter</title>
+</head>
+<body>
+    <script>
+
+        //map method
+        const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let sumOfMap = 0;
+        let mappedArray = array.map((array) => {
+            
+            if(array % 2 === 0) {
+                let tripleEvenNumbers = array * 3;
+                sumOfMap += tripleEvenNumbers;
+            }
+        });
+        console.log(sumOfMap);
+
+
+        //filter method
+        let sumOfFilter = 0;
+        let filteredArray = array.filter( (array) => {
+            if(array % 2 === 0) {
+                let tripleEvenNumbers = array * 3;
+                sumOfFilter += tripleEvenNumbers;
+            }
+        });
+        console.log(sumOfFilter);
+
+
+        //reduce method
+
+        const evenNums = array.filter((numbers) => { return numbers % 2 === 0 });
+        const triple = evenNums.map((element) => element * 3);   
+        let totalEvenSum = triple.reduce((previous, next) => {return previous + next});
+        console.log(totalEvenSum);
+
+        </script>
+</body>
+</html>
